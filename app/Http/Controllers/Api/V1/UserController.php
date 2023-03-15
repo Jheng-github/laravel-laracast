@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Api\V1;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Http\Resources\V1\UserResource;
+
 
 class UserController extends Controller
 {
@@ -13,7 +15,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        return User::all();
+        $users = User::all();
+        return UserResource::collection($users);
     }
 
     /**
@@ -37,7 +40,11 @@ class UserController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $user = User::findOrFail($id);
+       return new UserResource($user);
+      //可以查找某筆資料例如
+      //http://127.0.0.1:8000/api/v1/user/1
+      //http://127.0.0.1:8000/api/v1/user/2
     }
 
     /**
