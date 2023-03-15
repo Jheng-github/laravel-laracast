@@ -3,23 +3,12 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\v1\UserController;
-/*
-|--------------------------------------------------------------------------
-| API Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register API routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "api" middleware group. Make something great!
-|
-*/
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-//Route::apiResource('user', UserController::class);
-//, 'namespace' => 'App\Http\Controllers\Api\v1
+//前綴設定成v1 因為是api.php裡面 所以url會像這樣 api/v1/user 然後使用 UserController 來當控制器
 Route::group(['prefix' => 'v1'], function(){
     Route::apiResource('user', UserController::class);
 });
