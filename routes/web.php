@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use Laravel\Jetstream\Rules\Role;
+use App\Http\Controllers\RegisterController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +14,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
 Route::get('/', function () {
-    return view('welcome');
+    $tasks = ['1','2','3'];
+
+    return view('home',['tasks'=>$tasks]);
+});
+
+Route::get('register', [RegisterController::class, 'create']);
+Route::post('register', [RegisterController::class, 'store']);
+
+
+Route::get('index', function () {
+    $tasks = ['1','2','3'];
+
+    return view('index');
 });
