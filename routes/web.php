@@ -32,18 +32,21 @@ use App\Models\User;
 Route::get('register', [RegisterController::class, 'create'])->middleware('guest');
 Route::post('register', [RegisterController::class, 'store'])->middleware('guest');
 Route::post('logout',[SessionController::class,'destory'])->middleware('auth');
-Route::get('login',[SessionController::class,'create'])->middleware('guest');
+Route::get('login',[SessionController::class,'create'])->middleware('guest')->name('login');
 Route::post('login',[SessionController::class,'store'])->middleware('guest');
-
-
-
-
 
 Route::get('/', function () {
 
-  //  return User::all();
+    //  return User::all();
+      return view('index');
+  });
+  
+
+
+
+Route::get('/dashboard', function () {
     return view('index');
-});
+})->middleware('auth');
 
 
 

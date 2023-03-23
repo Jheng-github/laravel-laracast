@@ -31,7 +31,7 @@ class SessionController extends Controller
         //注意namespace
         if (Auth::attempt(['email' => $validate['email'], 'password' => $validate['password']])) {
             session()->regenerate();
-            return redirect('/')->with('success', '歡迎你再次回來');
+            return redirect('/dashboard')->with('success', '歡迎你再次回來');
         }
         //====================
 

@@ -21,7 +21,7 @@
       </div>
     </div>
     <div class="text-center">
-      <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">Data to enrich your online business</h1>
+      <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">Serever Handle</h1>
       <p class="mt-6 text-lg leading-8 text-gray-600">人生很難,註冊一下,睡一覺,你以為會好嗎？不還是一樣....難.</p>
       <div class="mt-10 flex items-center justify-center gap-x-6">
         <a href="#" class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Get started</a>
