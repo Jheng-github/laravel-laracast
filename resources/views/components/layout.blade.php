@@ -50,7 +50,7 @@
               @endunless
             
               @auth 
-              <span class="text-sm font-semibold leading-6 text-gray-900 ">{{auth()->user()->name}}您回來了</span>
+              <span class="text-sm font-semibold leading-6 text-gray-900 ">{{auth()->user()->name}}歡迎！</span>
               <br>
                 <form method="POST" action="/logout" class ="ml-6 text-blue-500">
                   {{-- @csrf --}}
