@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use Laravel\Jetstream\Rules\Role;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\SessionController;
+use App\Models\User;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -32,6 +34,8 @@ Route::post('register', [RegisterController::class, 'store'])->middleware('guest
 Route::post('logout',[SessionController::class,'destory']);
 
 Route::get('/', function () {
+
+  //  return User::all();
     return view('index');
 });
 

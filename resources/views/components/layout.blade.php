@@ -44,14 +44,15 @@
 
                 
               @unless (auth()->check())
-              <a href="/register" class="text-sm font-semibold leading-6 text-gray-900">註冊 <span aria-hidden="true">&rarr;</span></a>
-            
+              <a href="/register" class="text-xl font-semibold leading-6 text-gray-900">註冊</a>
+              <a href="/login" class="text-xl font-semibold leading-6 text-gray-900 ml-10">登入 </a>
+
               @endunless
             
               @auth 
               <span class="text-sm font-semibold leading-6 text-gray-900 ">{{auth()->user()->name}}您回來了</span>
               <br>
-                <form method="POST" action="/logiut" class ="ml-6 text-blue-500">
+                <form method="POST" action="/logout" class ="ml-6 text-blue-500">
                   {{-- @csrf --}}
                   <div>
                   <button type="sumbit">登出</button>
