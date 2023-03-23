@@ -14,7 +14,7 @@ return [
     */
 
     'defaults' => [
-        'guard' => 'web',
+        'guard' => 'web', //預設會走哪條路
         'passwords' => 'users',
     ],
 
@@ -35,10 +35,10 @@ return [
     |
     */
 
-    'guards' => [
+    'guards' => [ //可以打一個api  'api' => 之類的
         'web' => [
-            'driver' => 'session',
-            'provider' => 'users',
+            'driver' => 'session', //驗證方式
+            'provider' => 'users', //資料表
         ],
     ],
 
@@ -60,9 +60,9 @@ return [
     */
 
     'providers' => [
-        'users' => [
-            'driver' => 'eloquent',
-            'model' => App\Models\User::class,
+        'users' => [ //資料表的內容
+            'driver' => 'eloquent', // 使用哪種驅動
+            'model' => App\Models\User::class, // model的指定
         ],
 
         // 'users' => [
