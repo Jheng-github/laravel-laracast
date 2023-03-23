@@ -17,10 +17,11 @@ class RegisterController extends Controller
 //     }
     public  function store(){
   
-    // $this ->validate()推薦寫法 這樣才找得到引用哪個function
+
         //__('字串') //翻譯 多國語系 在lang/en/auth 
         //abort_if()
         //Auth::attempt
+            // $this ->validate()推薦寫法 這樣才找得到引用哪個function
     $validate = request()->validate([
         'name' => 'required|max:20|min:3',
        // 'username' => 'required|max:20|min:3|unique:users,username',

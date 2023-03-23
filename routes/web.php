@@ -31,7 +31,13 @@ use App\Models\User;
 
 Route::get('register', [RegisterController::class, 'create'])->middleware('guest');
 Route::post('register', [RegisterController::class, 'store'])->middleware('guest');
-Route::post('logout',[SessionController::class,'destory']);
+Route::post('logout',[SessionController::class,'destory'])->middleware('auth');
+Route::get('login',[SessionController::class,'create'])->middleware('guest');
+Route::post('login',[SessionController::class,'create'])->middleware('guest');
+
+
+
+
 
 Route::get('/', function () {
 
